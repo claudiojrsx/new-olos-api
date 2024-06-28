@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="/public/style.css" />
+	<title>Integração Olos</title>
+</head>
+
+<body>
+	<div class="superinfo-bg">
+		<div class="superinfo">
+			<p>Seg / Sex - 08:00 às 18:00</p>
+			<a href="tel:+5513981840120">+55 13 98184-0120</a>
+			<p>Av. Ana Costa, 146 - sala 1302</p>
+		</div>
+	</div>
+	<header class="menu-bg">
+		<div class="menu">
+			<div class="menu-logo">
+				<a href="#">Integração Olos</a>
+			</div>
+		</div>
+	</header>
+
+	<button onclick="callAuthenticatedOlos()"><span>AuthenticateOlos</span></button>
+
+	<script>
+		function callAuthenticatedOlos(agentLogin, agentPassword) {
+		  MyBundle.authenticatedOlos(agentLogin, agentPassword);
+		}
+	  
+		const urlParams = new URLSearchParams(window.location.search);
+		const agentLogin = urlParams.get('agentLogin');
+		const agentPassword = urlParams.get('agentPassword');
+	  
+		if (agentLogin && agentPassword) {
+		  callAuthenticatedOlos(agentLogin, agentPassword);
+		}
+	  </script>	  
+
+	<script src="../dist/bundle.js"></script>
+</body>
+
+</html>
