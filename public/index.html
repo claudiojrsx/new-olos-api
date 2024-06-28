@@ -26,23 +26,8 @@
 			</div>
 		</div>
 	</header>
-
-	<button onclick="callAuthenticatedOlos()"><span>AuthenticateOlos</span></button>
-
-	<script>
-		function callAuthenticatedOlos(agentLogin, agentPassword) {
-		  MyBundle.authenticatedOlos(agentLogin, agentPassword);
-		}
-	  
-		const urlParams = new URLSearchParams(window.location.search);
-		const agentLogin = urlParams.get('agentLogin');
-		const agentPassword = urlParams.get('agentPassword');
-	  
-		if (agentLogin && agentPassword) {
-		  callAuthenticatedOlos(agentLogin, agentPassword);
-		}
-	  </script>	  
-
+	
+	<script src="/public/main.js"></script>
 	<script src="../dist/bundle.js"></script>
 </body>
 
